@@ -1,0 +1,7 @@
+@charset "UTF-8";
+[class*=row]{background:lightblue;padding:2rem;}
+[class*=col]{border:1px solid #aaa;}
+[class*=col-xl]{background:lightgreen;}
+[class*=col-md]{background:pink;}
+[class*=d-flex]{background:lightgreen;padding:2rem;}
+[class*=d-flex]>div,[class*=d-flex]>section{background:orange;}

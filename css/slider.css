@@ -1,0 +1,90 @@
+@charset "UTF-8";
+/****** [ Common Style ] ******/
+#slider img{width:auto;height:100%;}
+#slider>div{position:relative;overflow:hidden;}
+#slider>div>:nth-child(1)>section{overflow:hidden;color:#333;position:absolute;top:0;left:100%;
+	width:100%;}
+#slider>div,#slider>div>:nth-child(1),
+#slider>div>:nth-child(1)>section>:first-child{height:16rem;}
+#slider>div>:nth-child(1)>section>:nth-child(2){position:absolute;top:0;left:0;
+	width:50%;height:100%;flex-wrap:nowrap;flex-direction:column;justify-content:center;padding:0 5%;
+	align-items:flex-start;}
+#slider>div>:nth-child(1)>section>:nth-child(2)>h2{font-size:1.3rem;}
+#slider>div>:nth-child(1)>section>:nth-child(2)>p{font-size:1rem;margin:1rem 0;line-height:1.3rem;}
+#slider>div>:nth-child(1)>section>:nth-child(2)>a{font-size:1rem;padding:0.5rem 2.5rem;
+	border:1px solid #666;color:#333;transition:all 0.4s}
+#slider>div>:nth-child(1)>section>:nth-child(2)>a:hover{background-color:#FA8E8E;color:white;}
+/*#slider>div>:nth-child(1)>section:nth-of-type(2){display:none;}	*/
+#slider>div>:nth-child(2)>div{position:absolute;top:0;height:100%;
+	align-items:center;}
+#slider>div>:nth-child(2)>:nth-child(1){left:0;}
+#slider>div>:nth-child(2)>:nth-child(2){right:0;}
+#slider>div>:nth-child(2)>div>[class*=icon]{width:50px;height:50px;display:inline-block;
+	text-align:center;}
+#slider>div>:nth-child(2)>div>[class*=icon]::before{font-size:2rem;}
+
+.c2lo{animation:c2lo 1s forwards;}
+.ro2c{animation:ro2c 1s forwards;}
+.c2ro{animation:c2ro 1s forwards;}
+.lo2c{animation:lo2c 1s forwards;}
+
+
+/****** [ Phone Style ] ******/
+@media screen and (max-width:600px){
+	#slider>div>:nth-child(1)>section{position: relative;}
+	#slider>div>:nth-child(1)>section>:nth-child(1){width:100%;}
+	#slider>div>:nth-child(1)>section>:nth-child(1)>img{position: absolute;right:-50px; z-index: -1;width: 120%;}
+	#slider>div>:nth-child(1)>section>:nth-child(2)>h2{position: absolute; top: 40%; font-size:1.5rem;color: white;}
+	#slider>div>:nth-child(1)>section>:nth-child(2)>a{position: absolute;padding:1rem 1.5rem;top: 70%;color: white;    border: 1px solid white;}
+	#slider>div>:nth-child(1)>section>:nth-child(2)>p{position: absolute;top:60%;display:none;color: white;}
+	#slider>div>:nth-child(2){display:none;}
+}
+
+/****** [ Phone Style with Portrait ] ******/
+@media screen and (max-width:600px) and (orientation:portrait){
+	#slider>div>:nth-child(1)>section>:first-child>img{margin-left:-5rem;}
+}
+
+/****** [ PC & Pad Style ] ******/
+@media screen and (min-width:601px){
+	.photo-right>:nth-child(1){position: relative;}
+	.photo-right>:nth-child(1)>img{position: absolute;right: 10px;}
+	.photo-left>:nth-child(2){position: relative;}
+	.photo-left>:nth-child(2)>h2{position: absolute;right: 5%;top:40%;}
+	.photo-left>:nth-child(2)>p{position: absolute;right: 5%;top:45%;}
+	.photo-left>:nth-child(2)>a{position: absolute;right: 5%;top:57%;}
+}
+
+/****** [ Pad Style ] ******/
+@media screen and (min-width:601px) and (max-width:1280px){
+	#slider>div,#slider>div>:nth-child(1),
+	#slider>div>:nth-child(1)>section>:first-child{height:30rem;}
+	#slider>div>:nth-child(1)>section>:nth-child(2){width:100%;}
+}
+
+/****** [ PC Style ] ******/
+@media screen and (min-width:1281px){
+	#slider>div,#slider>div>:nth-child(1),
+	#slider>div>:nth-child(1)>section>:first-child{height:40rem;}
+}
+
+
+@keyframes c2lo {
+	from{left:0;}
+	to  {left:-101%;}
+}
+
+@keyframes ro2c {
+	from{left:101%;}
+	to  {left:0;}
+}
+
+@keyframes c2ro {
+	from{left:0;}
+	to  {left:101%;}	
+}
+
+@keyframes lo2c {
+	from{left:-101%;}
+	to  {left:0;}
+}

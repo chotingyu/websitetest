@@ -1,0 +1,97 @@
+@charset "UTF-8";
+/*----- Styles For Common Style and Phone Style -----*/
+main{padding-bottom:1rem;}
+
+#albums img{width:100%;height:auto;}
+#albums>div{width:95%;margin:0 auto;padding-bottom:3rem;}
+#albums>div>:nth-child(1){margin-bottom:1.5rem;}
+#albums>div>:nth-child(1)>ul{display:flex;justify-content:space-between;}
+#albums>div>:nth-child(1)>ul>li[class=activeAlbum]{background-color:#F2F786;color: black;}
+#albums>div>:nth-child(1)>ul>li{width:32%;text-align:center;cursor:pointer;
+	background-color:#FA8E8E;color:white;padding:1.5rem 0;}
+#albums>div>:nth-child(2){position:relative;width:80%;left:10%;}
+#albums>div>:nth-child(2)>div:nth-child(1){overflow:hidden;width:100%;}
+#albums>div>:nth-child(2)>div:nth-child(1)>section{position:relative;display:none;
+	z-index:5;width:inherit;}
+#albums>div>:nth-child(2)>div:nth-child(1)>section:nth-child(1){display:block;}
+#albums>div>:nth-child(2)>div:nth-child(1)>section>div{position:absolute;top:0;width:100%;}
+#albums>div>:nth-child(2)>div:nth-child(1)>section>:nth-child(1)~div{left:102%;}
+#albums>div>:nth-child(2)>div:nth-child(1)>section>div>ul{display:flex;width:600%;}
+#albums>div>:nth-child(2)>div:nth-child(1)>section>div>ul>li{width:100%;}
+
+#albums>div>:nth-child(2)>div:nth-child(2)>div{height:100%;width:100%;height:100%;
+	position:absolute;top:0;left:0;}
+#albums>div>:nth-child(2)>div:nth-child(2)>div:nth-child(1)>div{position:absolute;
+	top:105%;left:0;width:100%;height:10%;}
+#albums>div>:nth-child(2)>div:nth-child(2)>div:nth-child(1)>div>ul{display:flex;width:inherit;
+	justify-content:center;}
+#albums>div>:nth-child(2)>div:nth-child(2)>div:nth-child(1)>div>ul>li{width:1rem;height:1rem;
+	border:1px solid #666;border-radius:50%;margin:0 0.5rem;cursor:pointer;}
+#albums>div>:nth-child(2)>div:nth-child(2)>div:nth-child(1)>div>ul>li.activePic{
+	background-color:#666;}
+
+#albums>div>:nth-child(2)>div:nth-child(2)>div>div{position:absolute;top:45%;}
+#albums>div>:nth-child(2)>div:nth-child(2)>div:nth-child(2)>:nth-child(1){left:-12%;}
+#albums>div>:nth-child(2)>div:nth-child(2)>div:nth-child(2)>:nth-child(2){left:101%;}
+#albums>div>:nth-child(2)>div:nth-child(2)>div>div>a>span::before{font-size:2rem;}
+
+#lightbox{position:fixed;width:100%;height:100%;background-color:rgba(0,0,0,0.8);z-index:50;
+	top:0;left:0;display:none;}
+#lightbox span[class^=icon]::before{color:white;font-size:2rem;line-height:3rem;}	
+#lightbox>div{height:inherit;width:inherit;}
+#lightbox>div:nth-child(2)>div{position:fixed;}
+#lightbox>div:nth-child(2)>:nth-child(1){top:1rem;right:1rem;width:3rem;height:3rem;border-radius:50%;
+	border-radius:50%;background-color:red;line-height:3rem;text-align:center;}
+#lightbox>div:nth-child(2)>:nth-child(1)~div{width:initial;height:4rem;text-align:center;}
+#lightbox>div:nth-child(2)>:nth-child(1)~div span::before{line-height:4rem;font-size:3.5rem;}
+#lightbox #picBox{width:85%;height:100%;margin:0 auto;display:flex;justify-content:center;align-items:center;}
+#lightbox #picBox>img{width:100%;height:auto;}
+
+
+/*----- Styles for Pad & Phone Portrait */
+@media screen and (max-width:800px) and (orientation:portrait){
+	#lightbox #picBox>img{width:90%;height:auto;}
+	#lightbox>div:nth-child(2)>:nth-child(1)~div{width:100%;}
+	#lightbox>div:nth-child(2)>:nth-child(2){top:5%;}
+	#lightbox>div:nth-child(2)>:nth-child(3){bottom:5%;}
+	#lightbox>div:nth-child(2)>:nth-child(1)~div span{transform:rotate(90deg);display:inline-block;}
+}
+
+/*----- Styles for Phone Landscape */
+@media screen and (max-width:800px) and (orientation:landscape){
+	#lightbox #picBox{width:80%;}
+	#lightbox #picBox>img{width:auto;height:90%;}
+	#lightbox>div:nth-child(2)>:nth-child(1)~div{top:45%;}
+	#lightbox>div:nth-child(2)>:nth-child(2){left:5%;}
+	#lightbox>div:nth-child(2)>:nth-child(3){right:5%;}
+}
+
+/*----- Styles for Phone Portrait */
+@media screen and (max-width:600px) and (orientation:portrait){
+	#lightbox #picBox>img{width:100%;}
+	#lightbox>div:nth-child(2)>:nth-child(2){top:15%;}
+	#lightbox>div:nth-child(2)>:nth-child(3){bottom:15%;}
+}
+
+/*----- Styles for Pad Landscape and Pc*/
+@media screen and (min-width:801px){
+	main{padding-bottom:5rem;}
+	#albums>div{width:70%;padding-bottom:0;}
+	#albums>div>:nth-child(2){width:100%;left:0;}
+	#albums>div>:nth-child(2)>div:nth-child(1)>section{left:0;}
+	#albums>div>div:nth-child(2)>div:nth-child(1)>section>div>ul{width:100%;flex-wrap:wrap;}
+	#albums>div>div:nth-child(2)>div:nth-child(1)>section>div>ul>li{width:33.33%;}
+	#albums>div>:nth-child(2)>div:nth-child(2)>div>div>a>span::before{font-size:3rem;}
+
+	#lightbox #picBox{width:40%;}
+	#lightbox>div:nth-child(2)>:nth-child(1)~div{top:45%;}
+	#lightbox>div:nth-child(2)>:nth-child(2){left:20%;}
+	#lightbox>div:nth-child(2)>:nth-child(3){right:20%;}
+}
+
+/*----- Styles for Pad Landscape*/
+@media screen and (min-width:801px) and (max-width:1280px) and (orientation:landscape){
+	#lightbox #picBox>img{width:auto;height:70%;}
+	#lightbox>div:nth-child(2)>:nth-child(2){left:10%;}
+	#lightbox>div:nth-child(2)>:nth-child(3){right:10%;}
+}
